@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arriendo Casa en Centro de La Serena</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Paleta de colores para bienes raíces */
+    :root {
+      --primary-color: #1B365D; /* Azul oscuro profesional */
+      --secondary-color: #F5F5F5; /* Gris muy claro de fondo */
+      --accent-color: #DAA520; /* Dorado suave para acentos */
+      --text-color: #333333; /* Texto oscuro legible */
+    }
+    body {
+      font-family: Arial, sans-serif;
+      color: var(--text-color);
+      background-color: var(--secondary-color);
+    }
+    /* Títulos con fuente Gabarito */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Gabarito', sans-serif;
+      color: var(--primary-color);
+    }
+    /* Navbar */
+    .navbar {
+      background-color: var(--primary-color) !important;
+    }
+    .navbar-brand, .nav-link {
+      color: #ffffff !important;
+    }
+    .nav-link:hover {
+      color: var(--accent-color) !important;
+    }
+    /* Hero */
+    .hero {
+      background: url('images/casa1.jpg') center center/cover no-repeat;
+      height: 60vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #ffffff;
+    }
+    .hero .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4);
+    }
+    .hero .content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+    /* Fondo dorado suave para el título en Hero */
+    .hero .content h1 {
+      background-color: var(--accent-color);
+      color: var(--primary-color);
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+    }
+    .btn-accent {
+      background-color: var(--accent-color);
+      border-color: var(--accent-color);
+      color: #ffffff;
+    }
+    .btn-accent:hover {
+      background-color: #b8871d;
+      border-color: #b8871d;
+    }
+    /* Tabla de características */
+    #features {
+      background-color: #ffffff;
+    }
+    #features .table {
+      margin-top: 1.5rem;
+      font-size: 1rem;
+      border-color: var(--primary-color);
+    }
+    #features thead {
+      background-color: var(--primary-color);
+      color: #ffffff;
+    }
+    /* Secciones generales */
+    section {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+    #gallery {
+      background-color: #ffffff;
+    }
+    #contact {
+      background-color: #ffffff;
+    }
+    footer {
+      background-color: var(--primary-color);
+      color: #ffffff;
+    }
+    footer a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    footer a:hover {
+      color: var(--accent-color);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Arriendo Balmaceda</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#features">Características</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Galería</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="container content">
+      <h1 class="display-4">Casa en Arriendo - Calle Balmaceda</h1>
+      <p class="lead">5 habitaciones, 2 baños, amplio living y comedor, patio interior y local comercial</p>
+      <a href="#contact" class="btn btn-accent btn-lg">Contáctanos</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="container">
+      <h2 class="text-center">Características de la Propiedad</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+          <thead class="text-center">
+            <tr>
+              <th>Atributo</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Habitaciones</td>
+              <td>5 espaciosas y luminosas</td>
+            </tr>
+            <tr>
+              <td>Baños</td>
+              <td>2 equipados y modernos</td>
+            </tr>
+            <tr>
+              <td>Cocina</td>
+              <td>Amueblada y equipada</td>
+            </tr>
+            <tr>
+              <td>Living y Comedor</td>
+              <td>Amplios y conectados</td>
+            </tr>
+            <tr>
+              <td>Patio Interior</td>
+              <td>Perfecto para descanso</td>
+            </tr>
+            <tr>
+              <td>Local Comercial</td>
+              <td>Ideal para tu negocio</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="container">
+      <h2 class="mb-4 text-center">Galería de Imágenes</h2>
+      <div class="row g-3">
+        <div class="col-sm-6 col-lg-4">
+          <img src="images/bedroom1.jpg" class="img-fluid rounded" alt="Habitación">
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <img src="images/living.jpg" class="img-fluid rounded" alt="Living">
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <img src="images/patio.jpg" class="img-fluid rounded" alt="Patio Interior">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="mb-4 text-center">Contáctanos</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="name" placeholder="Tu nombre">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo Electrónico</label>
+              <input type="email" class="form-control" id="email" placeholder="Tu correo">
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Mensaje</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Escribe tu consulta"></textarea>
+            </div>
+            <button type="submit" class="btn btn-accent">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container text-center">
+      <p class="mb-0">© 2025 Arriendo Casa Balmaceda. Todos los derechos reservados.</p>
+      <p class="mb-0">Contacto: +56 9 XXXX XXXX | <a href="mailto:arriendo@ejemplo.cl">arriendo@ejemplo.cl</a></p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
