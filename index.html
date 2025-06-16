@@ -51,40 +51,26 @@
       padding: 0.5rem 1rem;
       border-radius: 0.25rem;
     }
-    .btn-accent {
-      background-color: var(--accent-color);
-      border-color: var(--accent-color);
-      color: #fff;
-    }
-    .btn-accent:hover {
-      background-color: #b8871d;
-      border-color: #b8871d;
-    }
+    .btn-accent { background-color: var(--accent-color); border-color: var(--accent-color); color: #fff; }
+    .btn-accent:hover { background-color: #b8871d; border-color: #b8871d; }
+    .btn-interior { background-color: var(--primary-color); border-color: var(--primary-color); color: #fff; padding: 0.75rem 1.25rem; font-size: 1.25rem; }
+    .btn-interior:hover { background-color: #12294a; border-color: #12294a; }
+    .btn-exterior { background-color: var(--accent-color); border-color: var(--accent-color); color: var(--primary-color); padding: 0.75rem 1.25rem; font-size: 1.25rem; }
+    .btn-exterior:hover { background-color: #b8871d; border-color: #b8871d; }
 
-    /* Table características */
+    /* Tabla características */
     #features { background-color: #fff; }
     #features .table { margin-top:1.5rem; border-color: var(--primary-color); }
     #features thead { background-color: var(--primary-color); color: #fff; }
+    .disponible { color: green; font-weight: bold; }
+    .no-disponible { color: red; font-weight: bold; }
 
     /* Miniaturas cuadradas */
-    .thumbnail {
-      width: 100%;
-      aspect-ratio: 1;
-      overflow: hidden;
-      display: block;
-      margin-bottom: 1rem;
-    }
-    .thumbnail img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+    .thumbnail { width: 100%; aspect-ratio: 1; overflow: hidden; display: block; margin-bottom: 1rem; }
+    .thumbnail img { width: 100%; height: 100%; object-fit: cover; }
 
     /* Galería con lightbox */
     #gallery img { cursor: pointer; }
-
-    /* Ocultar por defecto */
     .gallery-grid { display: none; }
 
     /* Secciones */
@@ -99,13 +85,13 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
       <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="images/AB-logo.png" alt="Logo Arriendo Balmaceda" style="height:40px; margin-right:8px;">
+        <img src="images/AB-logo.png" alt="Logo" style="height:40px; margin-right:8px;">
         <span>Arriendo Balmaceda</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="collapse navbar-collapse" id="#navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#features">Características</a></li>
           <li class="nav-item"><a class="nav-link" href="#gallery">Galería</a></li>
@@ -125,12 +111,11 @@
     </div>
   </section>
 
-  <!-- Video Section -->
   <section id="video">
     <div class="container text-center">
       <h2 class="mb-4">Video del Local Comercial</h2>
       <div class="ratio ratio-16x9">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Video del local comercial" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -140,41 +125,66 @@
       <h2 class="text-center">Características de la Propiedad</h2>
       <div class="table-responsive">
         <table class="table table-striped table-bordered table-hover">
-          <thead><tr><th>Atributo</th><th>Descripción</th></tr></thead>
+          <thead>
+            <tr>
+              <th>Atributo</th>
+              <th>Descripción</th>
+              <th>Disponibilidad</th>
+            </tr>
+          </thead>
           <tbody>
-            <tr><td>Habitaciones</td><td>5 espaciosas y luminosas</td></tr>
-            <tr><td>Baños</td><td>2 equipados y modernos</td></tr>
-            <tr><td>Cocina</td><td>Amueblada y equipada</td></tr>
-            <tr><td>Living y Comedor</td><td>Amplios y conectados</td></tr>
-            <tr><td>Patio Interior</td><td>Perfecto para descanso</td></tr>
-            <tr><td>Local Comercial</td><td>Ideal para tu negocio</td></tr>
+            <tr>
+              <td>Habitaciones</td>
+              <td>5 espaciosas y luminosas</td>
+              <td><span class="no-disponible">❌ No disponible</span></td>
+            </tr>
+            <tr>
+              <td>Baños</td>
+              <td>2 equipados y modernos</td>
+              <td><span class="no-disponible">❌ No disponible</span></td>
+            </tr>
+            <tr>
+              <td>Cocina</td>
+              <td>Amueblada y equipada</td>
+              <td><span class="no-disponible">❌ No disponible</span></td>
+            </tr>
+            <tr>
+              <td>Living y Comedor</td>
+              <td>Amplios y conectados</td>
+              <td><span class="no-disponible">❌ No disponible</span></td>
+            </tr>
+            <tr>
+              <td>Patio Interior</td>
+              <td>Perfecto para descanso</td>
+              <td><span class="no-disponible">❌ No disponible</span></td>
+            </tr>
+            <tr>
+              <td>Local Comercial</td>
+              <td>Ideal para tu negocio</td>
+              <td><span class="disponible">✅ Disponible</span></td>
+            </tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <!-- Gallery Section -->
   <section id="gallery">
     <div class="container text-center">
       <h2 class="mb-4">Galería de imágenes</h2>
       <div class="d-flex justify-content-center mb-4">
-        <button id="btnInterior" class="btn btn-outline-primary me-2">Interior</button>
-        <button id="btnExterior" class="btn btn-outline-primary">Exterior</button>
+        <button id="btnInterior" class="btn btn-interior me-2">Interior</button>
+        <button id="btnExterior" class="btn btn-exterior">Exterior</button>
       </div>
-      <!-- Interior Grid -->
       <div id="gridInterior" class="row g-3 gallery-grid">
-        <!-- Seis imágenes de interior -->
         <div class="col-6 col-md-4 col-lg-3"><a href="images/int_1.jpeg" class="lightbox thumbnail"><img src="images/int_1.jpeg" alt="Interior 1"></a></div>
         <div class="col-6 col-md-4 col-lg-3"><a href="images/int_2.jpeg" class="lightbox thumbnail"><img src="images/int_2.jpeg" alt="Interior 2"></a></div>
         <div class="col-6 col-md-4 col-lg-3"><a href="images/int_3.jpeg" class="lightbox thumbnail"><img src="images/int_3.jpeg" alt="Interior 3"></a></div>
         <div class="col-6 col-md-4 col-lg-3"><a href="images/int_4.jpeg" class="lightbox thumbnail"><img src="images/int_4.jpeg" alt="Interior 4"></a></div>
-        <div class="col-6 col-md-4 col-lg-3"><a href="images/int_5.jpeg" class="lightbox thumbnail"><img src="images/int_5.jpeg" alt="Interior 5"></a></div>
-        <div class="col-6 col-md-4 col-lg-3"><a href="images/int_6.jpeg" class="lightbox thumbnail"><img src="images/int_6.jpeg" alt="Interior 6"></a></div>
+        <div class="col-6 col-md-4 col-lg-3"><a href="images/int_5.jpeg" class="lightbox thumbnail"><img src="images/int_5.jpeg" alt="Interior 5"></a></div>  
+        <div class="col-6 col-md-4 col-lg-3"><a href="images/int_6.jpeg" class="lightbox thumbnail"><img src="images/int_6.jpeg" alt="Interior 6"></a></div>  
       </div>
-      <!-- Exterior Grid -->
       <div id="gridExterior" class="row g-3 gallery-grid">
-        <!-- Siete imágenes de exterior -->
         <div class="col-6 col-md-4 col-lg-3"><a href="images/ext_1.jpeg" class="lightbox thumbnail"><img src="images/ext_1.jpeg" alt="Exterior 1"></a></div>
         <div class="col-6 col-md-4 col-lg-3"><a href="images/ext_2.jpeg" class="lightbox thumbnail"><img src="images/ext_2.jpeg" alt="Exterior 2"></a></div>
         <div class="col-6 col-md-4 col-lg-3"><a href="images/ext_3.jpeg" class="lightbox thumbnail"><img src="images/ext_3.jpeg" alt="Exterior 3"></a></div>
@@ -193,16 +203,10 @@
         <div class="col-md-8">
           <div class="mb-3">
             <label for="name" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="name" placeholder="Tu nombre">
+            <input type="text" class="form-control" id="name" placeholder="Tu nombre">        
           </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Correo Electrónico</label>
-            <input type="email" class="form-control" id="email" placeholder="Tu correo">
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Mensaje</label>
-            <textarea class="form-control" id="message" rows="4" placeholder="Escribe tu consulta"></textarea>
-          </div>
+          <div class="mb-3"><label for="email" class="form-label">Correo Electrónico</label><input type="email" class="form-control" id="email" placeholder="Tu correo"></div>
+          <div class="mb-3"><label for="message" class="form-label">Mensaje</label><textarea class="form-control" id="message" rows="4" placeholder="Escribe tu consulta"></textarea></div>
           <button type="submit" class="btn btn-accent">Enviar</button>
         </div>
       </form>
@@ -211,7 +215,7 @@
 
   <footer>
     <div class="container text-center">
-      <p class="mb-0">© 2025 Arriendo Casa Balmaceda. Todos los derechos reservados.</p>
+      <p class="mb-0">&copy; 2025 Arriendo Casa Balmaceda. Todos los derechos reservados.</p>
       <p class="mb-0">Contacto: +56 9 XXXX XXXX | <a href="mailto:arriendo@ejemplo.cl">arriendo@ejemplo.cl</a></p>
     </div>
   </footer>
@@ -241,14 +245,8 @@
     // Galería toggles
     const gridInt = document.getElementById('gridInterior');
     const gridExt = document.getElementById('gridExterior');
-    document.getElementById('btnInterior').addEventListener('click', () => {
-      gridInt.style.display = 'flex';
-      gridExt.style.display = 'none';
-    });
-    document.getElementById('btnExterior').addEventListener('click', () => {
-      gridExt.style.display = 'flex';
-      gridInt.style.display = 'none';
-    });
+    document.getElementById('btnInterior').addEventListener('click', () => { gridInt.style.display = 'flex'; gridExt.style.display = 'none'; });
+    document.getElementById('btnExterior').addEventListener('click', () => { gridExt.style.display = 'flex'; gridInt.style.display = 'none'; });
   </script>
 </body>
 </html>
