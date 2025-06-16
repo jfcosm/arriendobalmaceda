@@ -72,6 +72,7 @@
       aspect-ratio: 1;
       overflow: hidden;
       display: block;
+      margin-bottom: 1rem;
     }
     .thumbnail img {
       width: 100%;
@@ -82,6 +83,9 @@
 
     /* Galería con lightbox */
     #gallery img { cursor: pointer; }
+
+    /* Ocultar por defecto */
+    .gallery-grid { display: none; }
 
     /* Secciones */
     section { padding:3rem 0; }
@@ -95,7 +99,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
       <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="images/AB-logo.png" alt="Logo Arriendo Balmaceda" style="height:40px; width:auto; margin-right:8px;">
+        <img src="images/AB-logo.png" alt="Logo Arriendo Balmaceda" style="height:40px; margin-right:8px;">
         <span>Arriendo Balmaceda</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -122,7 +126,7 @@
   </section>
 
   <!-- Video Section -->
-  <section id="video" class="py-5">
+  <section id="video">
     <div class="container text-center">
       <h2 class="mb-4">Video del Local Comercial</h2>
       <div class="ratio ratio-16x9">
@@ -150,22 +154,34 @@
     </div>
   </section>
 
+  <!-- Gallery Section -->
   <section id="gallery">
-    <div class="container">
-      <h2 class="mb-4 text-center">Galería de Interior Local Comercial</h2>
-      <div class="row g-3">
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <a href="images/interior1.jpeg" class="lightbox thumbnail"><img src="images/interior1.jpeg" alt="Interior Local Comercial 1"></a>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <a href="images/interior2.jpeg" class="lightbox thumbnail"><img src="images/interior2.jpeg" alt="Interior Local Comercial 2"></a>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <a href="images/interior3.jpeg" class="lightbox thumbnail"><img src="images/interior3.jpeg" alt="Interior Local Comercial 3"></a>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <a href="images/interior4.jpeg" class="lightbox thumbnail"><img src="images/interior4.jpeg" alt="Interior Local Comercial 4"></a>
-        </div>
+    <div class="container text-center">
+      <h2 class="mb-4">Galería de imágenes</h2>
+      <div class="d-flex justify-content-center mb-4">
+        <button id="btnInterior" class="btn btn-outline-primary me-2">Interior</button>
+        <button id="btnExterior" class="btn btn-outline-primary">Exterior</button>
+      </div>
+      <!-- Interior Grid -->
+      <div id="gridInterior" class="row g-3 gallery-grid">
+        <!-- Seis imágenes de interior -->
+        <div class="col-6 col-md-4 col-lg-3"><a href="images/int_1.jpeg" class="lightbox thumbnail"><img src="images/int_1.jpeg" alt="Interior 1"></a></div>
+        <div class="col-6 col-md-4 col-lg-3"><a href="images/int_2.jpeg" class="lightbox thumbnail"><img src="images/int_2.jpeg" alt="Interior 2"></a></div>
+        <div class="col-6 col-md-4 col-lg-3"><a href="images/int_3.jpeg" class="lightbox thumbnail"><img src="images/int_3.jpeg" alt="Interior 3"></a></div>
+        <div class="col-6 col-md-4 col-lg-3"><a href="images/int_4.jpeg" class="lightbox thumbnail"><img src="images/int_4.jpeg" alt="Interior 4"></a></div>
+        <div class="col-6 col-md-4 col-lg-3"><a href="images/int_5.jpeg" class="lightbox thumbnail"><img src="images/int_5.jpeg" alt="Interior 5"></a></div>
+        <div class="col-6 col-md-4 col-lg-3"><a href="images/int_6.jpeg" class="lightbox thumbnail"><img src="images/int_6.jpeg" alt="Interior 6"></a></div>
+      </div>
+      <!-- Exterior Grid -->
+      <div id="gridExterior" class="row g-3 gallery-grid">
+        <!-- Siete imágenes de exterior -->
+        <div class="col-6 col-md-4 col-lg-3"><a href="images/ext_1.jpeg" class="lightbox thumbnail"><img src="images/ext_1.jpeg" alt="Exterior 1"></a></div>
+        <div class="col-6 col-md-4 col-lg-3"><a href="images/ext_2.jpeg" class="lightbox thumbnail"><img src="images/ext_2.jpeg" alt="Exterior 2"></a></div>
+        <div class="col-6 col-md-4 col-lg-3"><a href="images/ext_3.jpeg" class="lightbox thumbnail"><img src="images/ext_3.jpeg" alt="Exterior 3"></a></div>
+        <div class="col-6 col-md-4 col-lg-3"><a href="images/ext_4.jpeg" class="lightbox thumbnail"><img src="images/ext_4.jpeg" alt="Exterior 4"></a></div>
+        <div class="col-6 col-md-4 col-lg-3"><a href="images/ext_5.jpeg" class="lightbox thumbnail"><img src="images/ext_5.jpeg" alt="Exterior 5"></a></div>
+        <div class="col-6 col-md-4 col-lg-3"><a href="images/ext_6.jpeg" class="lightbox thumbnail"><img src="images/ext_6.jpeg" alt="Exterior 6"></a></div>
+        <div class="col-6 col-md-4 col-lg-3"><a href="images/ext_7.jpeg" class="lightbox thumbnail"><img src="images/ext_7.jpeg" alt="Exterior 7"></a></div>
       </div>
     </div>
   </section>
@@ -214,14 +230,24 @@
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
+    // Lightbox
     document.querySelectorAll('.lightbox').forEach(el => {
       el.addEventListener('click', e => {
         e.preventDefault();
-        const src = el.getAttribute('href');
-        document.getElementById('lightboxImage').src = src;
-        const myModal = new bootstrap.Modal(document.getElementById('imageModal'));
-        myModal.show();
+        document.getElementById('lightboxImage').src = el.getAttribute('href');
+        new bootstrap.Modal(document.getElementById('imageModal')).show();
       });
+    });
+    // Galería toggles
+    const gridInt = document.getElementById('gridInterior');
+    const gridExt = document.getElementById('gridExterior');
+    document.getElementById('btnInterior').addEventListener('click', () => {
+      gridInt.style.display = 'flex';
+      gridExt.style.display = 'none';
+    });
+    document.getElementById('btnExterior').addEventListener('click', () => {
+      gridExt.style.display = 'flex';
+      gridInt.style.display = 'none';
     });
   </script>
 </body>
