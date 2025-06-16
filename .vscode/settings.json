@@ -1,0 +1,15 @@
+{
+    "editor.codeActionsOnSave": {}
+
+
+
+
+
+    "workbench.colorCustomizations": {
+  "terminal.foreground": "#00FF00",       // Color del texto
+  "terminal.background": "#000000",       // Color del fondo
+  "terminalCursor.foreground": "#FFFFFF", // Color del cursor
+  "terminal.ansiBrightGreen": "#00FF00",  // Colores ANSI si los quieres cambiar
+  "terminal.ansiRed": "#FF0000"
+}
+}
