@@ -134,35 +134,36 @@
           </thead>
           <tbody>
             <tr>
+              <td>Local Comercial + Baño</td>
+              <td>Ideal para tu negocio</td>
+              <td><span class="disponible">✅ Disponible</span></td>
+              </tr>
+              <tr>
               <td>Habitaciones</td>
               <td>5 espaciosas y luminosas</td>
-              <td><span class="no-disponible">❌ No disponible</span></td>
+              <td><span class="no-disponible">❌ Próximamente disponible</span></td>
             </tr>
             <tr>
               <td>Baños</td>
               <td>2 equipados y modernos</td>
-              <td><span class="no-disponible">❌ No disponible</span></td>
+              <td><span class="no-disponible">❌ Próximamente disponible</span></td>
             </tr>
             <tr>
               <td>Cocina</td>
               <td>Amueblada y equipada</td>
-              <td><span class="no-disponible">❌ No disponible</span></td>
+              <td><span class="no-disponible">❌ Próximamente disponible</span></td>
             </tr>
             <tr>
               <td>Living y Comedor</td>
               <td>Amplios y conectados</td>
-              <td><span class="no-disponible">❌ No disponible</span></td>
+              <td><span class="no-disponible">❌ Próximamente disponible</span></td>
             </tr>
             <tr>
               <td>Patio Interior</td>
               <td>Perfecto para descanso</td>
-              <td><span class="no-disponible">❌ No disponible</span></td>
+              <td><span class="no-disponible">❌ Próximamente disponible</span></td>
             </tr>
-            <tr>
-              <td>Local Comercial + Baño</td>
-              <td>Ideal para tu negocio</td>
-              <td><span class="disponible">✅ Disponible</span></td>
-            </tr>
+            
           </tbody>
         </table>
       </div>
@@ -199,14 +200,28 @@
   <section id="contact">
     <div class="container">
       <h2 class="mb-4 text-center">Contáctanos</h2>
-      <form class="row g-3 justify-content-center">
+      <!-- Formulario funcional via Formspree -->
+      <form action="https://formspree.io/f/mnnvvkda" method="POST" class="row g-3 justify-content-center">
         <div class="col-md-8">
+          <!-- Nombre -->
           <div class="mb-3">
             <label for="name" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="name" placeholder="Tu nombre">        
+            <input type="text" class="form-control" id="name" name="name" placeholder="Tu nombre" required>
           </div>
-          <div class="mb-3"><label for="email" class="form-label">Correo Electrónico</label><input type="email" class="form-control" id="email" placeholder="Tu correo"></div>
-          <div class="mb-3"><label for="message" class="form-label">Mensaje</label><textarea class="form-control" id="message" rows="4" placeholder="Escribe tu consulta"></textarea></div>
+          <!-- Correo Electrónico -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Tu correo" required>
+          </div>
+          <!-- Mensaje -->
+          <div class="mb-3">
+            <label for="message" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Escribe tu consulta" required></textarea>
+          </div>
+          <!-- Opciones Formspree (opcional) -->
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde arriendobalmaceda.cl">
+          <input type="hidden" name="_captcha" value="false">
+          <!-- Botón de envío -->
           <button type="submit" class="btn btn-accent">Enviar</button>
         </div>
       </form>
@@ -215,8 +230,8 @@
 
   <footer>
     <div class="container text-center">
-      <p class="mb-0">&copy; 2025 Arriendo Casa Balmaceda. Todos los derechos reservados.</p>
-      <p class="mb-0">Contacto: +56 9 XXXX XXXX | <a href="mailto:arriendo@ejemplo.cl">arriendo@ejemplo.cl</a></p>
+      <p class="mb-0">&copy; 2025 Arriendo Balmaceda. Todos los derechos reservados.</p>
+      <p class="mb-0">Contacto: +56 9 5899 4589 | <a href="mailto:arriendo@ejemplo.cl">francisco.carle@gmail.com</a></p>
     </div>
   </footer>
 
